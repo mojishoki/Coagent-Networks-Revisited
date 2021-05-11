@@ -1,5 +1,5 @@
 # Coagent Networks Revisited
-This repo contains code accompaning the paper, [Coagent Networks Revisited](https://arxiv.org/abs/). It includes code to run all the experiments described in the paper. For experiment details, please refer to the paper.
+This repo contains code accompaning the paper, [Coagent Networks Revisited](https://arxiv.org/abs/2001.10474). It includes code to run all the experiments described in the paper. For experiment details, please refer to the paper.
 
 ---
 
@@ -72,7 +72,7 @@ To see an example, check out the notebook `main.ipynb`.
 ---
 
 ## Related Works/Codes
-* The fourrooms experiment is built on the Option-Critic, [2017](https://www.aaai.org/ocs/index.php/AAAI/AAAI17/paper/download/14858/14328) [tabular code](https://github.com/jeanharb/option_critic/tree/master/fourrooms).
-* The PPOC, [2017](https://arxiv.org/pdf/1712.00004.pdf) [code](https://github.com/mklissa/PPOC).
+* The fourrooms experiment is built on the Option-Critic, [2017](https://ojs.aaai.org/index.php/AAAI/article/download/10916/10775), [tabular code](https://github.com/jeanharb/option_critic/tree/master/fourrooms).
+* The PPOC, [2017](https://arxiv.org/abs/1712.00004), [code](https://github.com/mklissa/PPOC).
 * Options of Interest, [2020](https://arxiv.org/abs/2001.00271), [code](https://github.com/kkhetarpal/ioc).
 

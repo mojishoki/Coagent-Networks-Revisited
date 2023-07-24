@@ -7,7 +7,7 @@ This repo contains code accompaning the paper, [Coagent Networks Revisited](http
 To install dependencies for experiments, run the following commands:
 ``` bash
 conda create -n hoc python=3.8
-conda actvate hoc
+conda activate hoc
 pip install -r requirements.txt
 ```
 

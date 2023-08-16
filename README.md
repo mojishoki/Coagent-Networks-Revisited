@@ -1,5 +1,5 @@
 # Coagent Networks Revisited
-This repo contains code accompaning the paper, [Coagent Networks Revisited](https://arxiv.org/abs/2001.10474). It includes code to run all the experiments described in the paper. For experiment details, please refer to the paper.
+This repo contains the code for the paper [Coagent Networks Revisited](https://arxiv.org/abs/2001.10474).
 
 ---
 
@@ -17,11 +17,11 @@ The list of arguments may be seen in the `main` functions implemented in these f
 Most of the arguments are self-explanatory.
 Please refer to the paper for more details.
 
-There are three arguments that may require some explanation.
+There are three arguments that need some explanation.
 The argument `graph` describes the graph of options with a list of lists of positive integers.
 The elements of `graph` correspond to options and their elements are their list of children.
 Any option having `-1` as one of its children will be capable of calling primitive options.
-A primitive option is an options that executes its corresponding primitive action in the environment.
+A primitive option is an option that executes its corresponding primitive action in the environment.
 The following code checks if this variable is valid.
 ``` python
 for i, v in enumerate(graph):
@@ -38,7 +38,7 @@ If `shared` is `True`, then the children are shared.
 In other words, we have a Feedforward Options Network.
 Otherwise, we have a Hierarchical Option Critic.
 
-For example, the following code will run the <1, 1, 1> FON which is analyzed in Figure 5 in the paper.
+For example, the following code will run the <1, 1, 1> FON which is shown in Figure 5 in the paper.
 ```bash
 python hoc.py --noptions=[1,1] --seed 1 --nruns 5 --nepisodes 50000
 ```
@@ -48,7 +48,7 @@ python hoc.py --noptions=[2,2] --shared True --seed 1 --nruns 5 --nepisodes 5000
 ```
 Here the root option has two children and each of them have two children, which they share.
 Hence the root has 2 grand-children and the model has 5 non-primitive options.
-If we set `shared False` in the above code, we will run an HOC with 7 non-primitive options.
+If we set `--shared False` in the above code, we will run an HOC with 7 non-primitive options.
 
 In our experiments, we tend to use seeds from 1 to 5 or 1 to 10 and take 10 or 5 runs with 50000 episodes, for a total of 50 runs.
 
@@ -59,12 +59,12 @@ At then end of each run, it will save both a copy of all the weights in the mode
 This is a 4-dimensional array where
 `history[run, episode, option_uid, k]`
 is equal to:
-- if k == 0: avg duration;
-- if k == 1: total discounted reward;
-- if k == 2: number of times this option has been used.
+- if `k == 0`: avg duration;
+- if `k == 1`: total discounted reward;
+- if `k == 2`: number of times this option has been used.
 
 We consider all of the options, even primitive ones.
-Using this we may analyse the options and compute several statics such as average option length.
+Using this we may analyse the options and compute several statistics such as the average option length.
 For the root, this stores the duration and the total discounted reward of the entire episode, which is the performance of the model.
 
 To see an example, check out the notebook `main.ipynb`.
